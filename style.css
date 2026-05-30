@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap');
+
+/* --- ALAPBEÁLLÍTÁSOK & NYÁRI SZÍNPALETTA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), 
+                url('https://wallpapercave.com/wp/wp11396097.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #2c3e50;
+    overflow-x: hidden;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- NYÁRI FEJLÉC --- */
+.summer-header {
+    background: linear-gradient(135deg, #ff5e62 0%, #ff9966 100%);
+    position: relative;
+    text-align: center;
+    padding: 4rem 1rem;
+    color: white;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+.summer-header:hover {
+    filter: hue-rotate(40deg) brightness(1.05);
+}
+
+/* --- FEJLÉC SZÖVEG --- */
+.summer-header h1 {
+    font-family: 'Pacifico', cursive; 
+    font-size: clamp(3.5rem, 8vw, 6rem); 
+    font-weight: 400; 
+    text-shadow: 3px 5px 12px rgba(0, 0, 0, 0.25);
+    letter-spacing: 2px;
+    transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.4s ease; 
+}
+
+
+.summer-header h1:hover {
+    color: #ffde00;
+    text-shadow: 4px 8px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    cursor: default;
+}
+
+.summer-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 0.5rem;
+}
+
+/* --- TÁROLÓ --- */
+.container {
+    max-width: 950px;
+    margin: -2rem auto 4rem auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 10;
+    
+    flex: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+/* --- INTERAKTÍV DIAVETÍTÉS KÁRTYA --- */
+.slideshow-box {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 94, 98, 0.1);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.slideshow-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 94, 98, 0.2);
+}
+
+.image-container {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slideshow-box:hover .image-container img {
+    transform: scale(1.06) rotate(1deg);
+}
+
+.slide-text {
+    padding: 2.5rem;
+    background: white;
+}
+
+.slide-text h2 {
+    font-size: 1.8rem;
+    color: #ff5e62;
+    margin-bottom: 1rem;
+}
+
+.slide-text p {
+    color: #5a6b7c;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+/* --- INTERAKTÍV NYILAK --- */
+.nav-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: #ff5e62;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.nav-btn:hover {
+    background: #ff5e62;
+    color: white;
+    transform: scale(1.15);
+}
+
+/* --- EDZÉS SZEKCIÓ --- */
+.workout-section {
+    margin-top: 3rem;
+}
+
+.workout-card {
+    background: linear-gradient(to right, #ffffff, #fff5f2);
+    border-right: 5px solid #ff9966;
+    border-left: 5px solid #ff5e62;
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.workout-card:hover {
+    transform: scale(1.02) translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 94, 98, 0.15);
+    background: linear-gradient(to right, #fff5f2, #ffffff);
+}
+
+.workout-icon {
+    font-size: 3rem;
+    transition: transform 0.4s ease;
+}
+
+.workout-card:hover .workout-icon {
+    transform: rotate(-15deg) scale(1.2);
+}
+
+.workout-content h2 {
+    color: #2c3e50;
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+}
+
+/* --- LÁBLÉC --- */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #1e272e;
+    color: #85929e;
+    font-size: 0.9rem;
+    margin-top: auto; 
+    width: 100%;
+}
+
+/* --- ANIMÁCIÓK --- */
+.fade {
+    animation: fadeEffect 0.8s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; transform: scale(0.99); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.leaves-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.leaf {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    user-select: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg) translateX(30px);
+        opacity: 0;
+    }
+}
+
+/* --- RESZPONZÍV MOBIL DIZÁJN --- */
+@media (max-width: 768px) {
+    .image-container { height: 260px; }
+    .nav-btn { top: 25%; width: 40px; height: 40px; font-size: 16px; }
+    .workout-card { flex-direction: column; text-align: center; }
+    .slide-text { padding: 1.5rem; }
+}
